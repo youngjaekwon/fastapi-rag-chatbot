@@ -8,3 +8,5 @@
 - 개발용 Docker compose 스택 추가: postgres + pgvector, api, worker 서비스 포함
 - .gitignore 업데이트: env 파일 및 데이터베이스 데이터 파일 제외
 - 임시 FastAPI 앱 및 Worker 엔트리포인트 추가
+- ruff/mypy/pytest 설정을 `pyproject.toml`에 추가
+- 초기 smoke 테스트 파일(`tests/unit/test_smoke.py`) 추가
