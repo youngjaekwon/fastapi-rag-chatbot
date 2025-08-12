@@ -30,10 +30,10 @@ db-shell:
 
 .PHONY: lint typecheck test
 lint:
-	ruff check .
+	uv run ruff check .
 
 typecheck:
-	mypy .
+	uv run mypy .
 
 test:
 	uv run pytest -v --asyncio-mode=auto --cov=src --cov-report=term-missing

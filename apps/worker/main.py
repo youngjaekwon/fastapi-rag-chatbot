@@ -1,11 +1,12 @@
 import asyncio
 import signal
+from typing import Any
 
 
-async def main():
+async def main() -> None:
     stop_event = asyncio.Event()
 
-    def _stop(*_):
+    def _stop(*_: Any) -> None:
         stop_event.set()
 
     loop = asyncio.get_event_loop()

@@ -21,6 +21,7 @@ dependencies = [
     "pgvector>=0.4.1",
     "prometheus-client>=0.22.1",
     "psycopg[binary]>=3.2.9",
+    "pydantic>=2.11.7",
     "pypdf>=6.0.0",
     "sqlalchemy>=2.0.43",
     "tiktoken>=0.11.0",
@@ -30,10 +31,68 @@ dependencies = [
 dev = [
     "httpx>=0.28.1",
     "mypy>=1.17.1",
-    "pre-commit>=4.3.0",
+    "pre-commit-uv>=4.1.4",
     "pytest>=8.4.1",
     "pytest-asyncio>=1.1.0",
     "pytest-cov>=6.2.1",
     "respx>=0.22.0",
     "ruff>=0.12.8",
 ]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+exclude = [
+    "migrations",
+    "deployments",
+    "infra",
+    ".venv",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "W",
+    "I",
+    "UP",
+    "B",
+    "C90",
+]
+ignore = [
+    "E501",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+
+[tool.mypy]
+python_version = "3.13"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+check_untyped_defs = true
+exclude = [
+    "client",
+    "contracts",
+    "deployments",
+    "docker",
+    "infra",
+    "migrations",
+    "tests/resources",
+]
+plugins = ["sqlalchemy.ext.mypy.plugin", "pydantic.mypy"]
