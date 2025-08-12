@@ -1,0 +1,23 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main, staging, dev]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          version-file: "pyproject.toml"
+      - name: Lint with ruff
+        run: make lint
+      - name: Type check with mypy
+        run: make typecheck
+      - name: Run tests
+        run: make test
