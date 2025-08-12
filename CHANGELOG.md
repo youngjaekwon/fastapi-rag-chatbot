@@ -5,3 +5,6 @@
 - 프로젝트 구조 초기화: 서비스의 기본 디렉터리 구조를 설정
 - Makefile 추가: 개발, 데이터베이스, 린트/테스트 실행을 위한 명령어 포함
 - pre-commit 설정: ruff, mypy, 문서 린팅/포매팅, 타입체크를 위한 훅 구성
+- 개발용 Docker compose 스택 추가: postgres + pgvector, api, worker 서비스 포함
+- .gitignore 업데이트: env 파일 및 데이터베이스 데이터 파일 제외
+- 임시 FastAPI 앱 및 Worker 엔트리포인트 추가
