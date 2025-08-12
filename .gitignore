@@ -16,3 +16,6 @@ wheels/
 
 # vscode
 .vscode/
+
+# data
+docker/data/db_data/
