@@ -14,7 +14,6 @@ jobs:
         uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
-          version-file: "pyproject.toml"
       - name: Lint with ruff
         run: make lint
       - name: Type check with mypy
