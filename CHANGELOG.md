@@ -10,3 +10,4 @@
 - 임시 FastAPI 앱 및 Worker 엔트리포인트 추가
 - ruff/mypy/pytest 설정을 `pyproject.toml`에 추가
 - 초기 smoke 테스트 파일(`tests/unit/test_smoke.py`) 추가
+- Github Actions CI 워크플로우 추가: main, staging, dev 브랜치에서 push 및 PR 시 lint, typecheck, test 실행
