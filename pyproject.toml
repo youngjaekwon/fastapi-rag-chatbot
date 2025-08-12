@@ -1,0 +1,39 @@
+[project]
+name = "fastapi-rag-chatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiokafka>=0.12.0",
+    "alembic>=1.16.4",
+    "asyncpg>=0.30.0",
+    "fastapi[standard]>=0.116.1",
+    "langchain-core>=0.3.74",
+    "langchain-openai>=0.3.29",
+    "langgraph>=0.6.4",
+    "openai>=1.99.9",
+    "opentelemetry-api>=1.36.0",
+    "opentelemetry-exporter-otlp-proto-http>=1.36.0",
+    "opentelemetry-instrumentation-fastapi>=0.57b0",
+    "opentelemetry-instrumentation-logging>=0.57b0",
+    "opentelemetry-sdk>=1.36.0",
+    "pgvector>=0.4.1",
+    "prometheus-client>=0.22.1",
+    "psycopg[binary]>=3.2.9",
+    "pypdf>=6.0.0",
+    "sqlalchemy>=2.0.43",
+    "tiktoken>=0.11.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "pytest-cov>=6.2.1",
+    "respx>=0.22.0",
+    "ruff>=0.12.8",
+]
