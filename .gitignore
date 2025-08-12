@@ -8,3 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Env
+.env
+.env.*
+!.env.example
+
+# vscode
+.vscode/
