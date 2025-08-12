@@ -8,3 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Env
+.env
+.env.*
+!.env.example
+
+# vscode
+.vscode/
+
+# data
+docker/data/db_data/
+
+# test
+.coverage
