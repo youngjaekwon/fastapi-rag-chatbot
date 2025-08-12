@@ -15,8 +15,8 @@ jobs:
         with:
           enable-cache: true
       - name: Lint with ruff
-        run: make lint
+        run: uv run ruff check .
       - name: Type check with mypy
-        run: make typecheck
+        run: uv run mypy .
       - name: Run tests
-        run: make test
+        run: uv run pytest

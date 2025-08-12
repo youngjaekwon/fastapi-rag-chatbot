@@ -36,7 +36,7 @@ typecheck:
 	uv run mypy .
 
 test:
-	uv run pytest -v --asyncio-mode=auto --cov=src --cov-report=term-missing
+	uv run pytest -v
 
 .PHONY: run-api run-worker
 run-api:
